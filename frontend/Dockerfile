@@ -1,10 +1,10 @@
-FROM node:18
+FROM node:18.20
 
 WORKDIR /container-frontend
 
 COPY package*.json .
-
-RUN npm install
+RUN rm -rf node_modules package-lock.json \
+    && npm install
 
 COPY . .
 

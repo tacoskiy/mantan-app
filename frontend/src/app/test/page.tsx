@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-function Test(){
+function TestPage(){
     const [data, setData] = useState<{message: string} | null>(null);
 
     useEffect(() => {
@@ -16,10 +16,10 @@ function Test(){
     },[])
 
     return(
-        <>
-            <h1>{data ? data.message : 'Loading'}</h1>
-        </>
+        <section>
+            <h1 className="text-primary">{data ? data.message : 'Loading...'}</h1>
+        </section>
     );
 }
 
-export default Test;
+export default TestPage;
