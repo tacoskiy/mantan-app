@@ -12,3 +12,5 @@ Route::get('/hello', function (Request $request) {
        ]
    ]);
 });
+
+// Route::get('/create');
