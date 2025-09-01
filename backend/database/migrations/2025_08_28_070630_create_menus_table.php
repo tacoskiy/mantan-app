@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('detail');
+            $table->decimal('price');
+            $table->string('image_path');
+            $table->string('allergen');
+            $table->string('category');
+
+            $table->uuid('menus_id');
+            $table->foreign('menus_id')->references('id')->on('order_items')->onDelete('cascade');
             $table->timestamps();
         });
     }

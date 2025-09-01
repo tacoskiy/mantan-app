@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('archiveds', function (Blueprint $table) {
             $table->id();
+            $table->datetime('closed_at');
+            $table->json('session_data');
             $table->timestamps();
         });
     }
