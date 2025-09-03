@@ -15,7 +15,7 @@ class Order extends Model
 
     public function msessions()//kokokaeruyo
     {
-        return $this->belongsTo(Session::class, 'orders_id', 'id');
+        return $this->belongsTo(Msession::class, 'orders_id', 'id');
     }
 
     public function orderItems()
