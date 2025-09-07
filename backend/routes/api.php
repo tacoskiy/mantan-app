@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -26,14 +27,14 @@ Route::delete('/deleteSession/{id}', [SessionController::class, 'deleteSession']
 
 
 
-//Order
-// Route::get('/createSession', [SessionController::class, 'createSession']);
 
-// Route::get('/readSession', [SessionController::class, 'createSession']);
+Route::post('/createOrder', [OrderController::class, 'createOrder']);
 
-// Route::get('/updateSession', [SessionController::class, 'createSession']);
+Route::get('/readOrder', [OrderController::class, 'readOrder']);
 
-// Route::get('/deleteSession', [SessionController::class, 'createSession']);
+Route::put('/updateOrder/{id}', [OrderController::class, 'updateOrder']);
+
+Route::delete('/deleteOrder/{id}', [OrderController::class, 'deleteOrder']);
 
 
 
