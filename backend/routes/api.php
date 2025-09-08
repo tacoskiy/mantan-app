@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\OrderItemController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -40,13 +41,13 @@ Route::delete('/deleteOrder/{id}', [OrderController::class, 'deleteOrder']);
 
 
 // //OrderItem
-// Route::get('/createSession', [SessionController::class, 'createSession']);
+Route::post('/createOrderItem', [OrderItemController::class, 'createOrderItem']);
 
-// Route::get('/readSession', [SessionController::class, 'createSession']);
+Route::get('/readOrderItem', [OrderItemController::class, 'readOrderItem']);
 
-// Route::get('/updateSession', [SessionController::class, 'createSession']);
+Route::put('/updateOrderItem/{id}', [OrderItemController::class, 'updateOrderItem']);
 
-// Route::get('/deleteSession', [SessionController::class, 'createSession']);
+Route::delete('/deleteOrderItem/{id}', [OrderItemController::class, 'deleteOrderItem']);
 
 
 

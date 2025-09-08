@@ -27,7 +27,7 @@ class Order extends Model
     }
 
     // OrderItemとのリレーション
-    public function orderItems()
+    public function orderitems()
     {
         // hasMany(関連モデル, 関連モデルの外部キー, 自モデルの主キー)
         return $this->hasMany(OrderItem::class, 'order_id', 'id');

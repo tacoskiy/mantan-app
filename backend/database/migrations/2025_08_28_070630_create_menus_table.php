@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('menus', function (Blueprint $table) {
-            $table->uuid();
+            $table->uuid()->primary();
             $table->string('name');
             $table->text('detail');
             $table->decimal('price');
@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('allergen');
             $table->string('category');
 
-            $table->uuid('menus_id');
-            $table->foreign('menus_id')->references('id')->on('order_items')->onDelete('cascade');
+            $table->uuid('order_items_id');
+            $table->foreign('order_items_id')->references('id')->on('order_items')->onDelete('cascade');
             $table->timestamps();
         });
     }
