@@ -3,6 +3,7 @@
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\OrderItemController;
+use App\Http\Controllers\MenuController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,7 +29,7 @@ Route::delete('/deleteSession/{id}', [SessionController::class, 'deleteSession']
 
 
 
-
+// //Order
 Route::post('/createOrder', [OrderController::class, 'createOrder']);
 
 Route::get('/readOrder', [OrderController::class, 'readOrder']);
@@ -53,10 +54,10 @@ Route::delete('/deleteOrderItem/{id}', [OrderItemController::class, 'deleteOrder
 
 
 // //Menu
-// Route::get('/createSession', [SessionController::class, 'createSession']);
+Route::post('/createMenu', [MenuController::class, 'createMenu']);
 
-// Route::get('/readSession', [SessionController::class, 'createSession']);
+Route::get('/readMenu', [MenuController::class, 'readMenu']);
 
-// Route::get('/updateSession', [SessionController::class, 'createSession']);
+Route::put('/updateMenu/{id}', [MenuController::class, 'updateMenu']);
 
-// Route::get('/deleteSession', [SessionController::class, 'createSession']);
+Route::delete('/deleteMenu/{id}', [MenuController::class, 'deleteMenu']);
