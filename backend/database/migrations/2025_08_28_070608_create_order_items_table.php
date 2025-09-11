@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('status');
             $table->uuid('menu');
 
-            $table->uuid('order_items_id');
-            $table->foreign('order_items_id')->references('id')->on('orders')->onDelete('cascade');
+            $table->uuid('order_id');
+            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
 
             $table->timestamps();
         });

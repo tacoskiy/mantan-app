@@ -14,11 +14,10 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->datetime('ordered_at');
-            $table->uuid('orderItems');
 
             // sessions テーブルとの外部キー (uuid)
             $table->uuid('session_id');
-            $table->foreign('session_id')->references('id')->on('sessions')->onDelete('cascade');
+            $table->foreign('session_id')->references('id')->on('msessions')->onDelete('cascade');
 
             $table->timestamps();
         });
